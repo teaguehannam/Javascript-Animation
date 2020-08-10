@@ -17,8 +17,13 @@ function init() {
 	document.body.appendChild(renderer.domElement); // Add canvas to DOM
 
 	const geometry = new THREE.BoxGeometry(2,2,2); // vertices and faces
-	const material = new THREE.MeshBasicMaterial( {color: 0x0000ff} ); // color or texture
 
+	// Texture material
+	// const texture = new THREE.TextureLoader().load(crate);
+	// const material = new THREE.MeshBasicMaterial( {map:texture} );
+
+	// Color material
+	const material = new THREE.MeshBasicMaterial( {color: 0x0000ff} ); 
 	cube = new THREE.Mesh( geometry, material ); // Create
 	scene.add(cube); // Add to scene
 
