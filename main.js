@@ -7,7 +7,7 @@ function init() {
 	scene = new THREE.Scene()
 
 	// typeOfCamera(FOV, Aspect Ratio, Near Plane, Far Plane)
-	camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+	camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
 	camera.position.z = 5; // Move camera back
 	
 	// WebGL supported by modern browsers
@@ -19,14 +19,13 @@ function init() {
 	const geometry = new THREE.BoxGeometry(2,2,2); // vertices and faces
 
 	// Texture material
-	// const texture = new THREE.TextureLoader().load(crate);
+	// const texture = new THREE.TextureLoader().load('crate.gif');
 	// const material = new THREE.MeshBasicMaterial( {map:texture} );
 
 	// Color material
 	const material = new THREE.MeshBasicMaterial( {color: 0x0000ff} ); 
-	cube = new THREE.Mesh( geometry, material ); // Create
+	cube = new THREE.Mesh( geometry, material ); // Create Object
 	scene.add(cube); // Add to scene
-
 }
 
 // Runs Animation
