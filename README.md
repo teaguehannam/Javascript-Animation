@@ -1,4 +1,6 @@
 # Three.js Animations
 
-### Currently just a spinning box example - good documentation
+### Rotating Box
+
+### 3D Molecule Viewer
 
