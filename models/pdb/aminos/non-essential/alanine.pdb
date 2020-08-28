@@ -1,0 +1,32 @@
+HEADER    NCI NSC 7602                                                  NCI    1
+TITLE                                                                   NCI    2
+COMPND    NSC7602 alanine                                               NCI    3
+AUTHOR    National Cancer Institute                                     NCI    4
+REVDAT   1  28-Aug-20     0                                             NCI    5
+ATOM      1  C           0       0.000   0.000   0.000  0.00  0.00           C+0
+ATOM      2  C           0       1.220   0.820  -0.420  0.00  0.00           C+0
+ATOM      3  C           0       1.920   1.460   0.740  0.00  0.00           C+0
+ATOM      4  O           0       1.320   2.100   1.560  0.00  0.00           O+0
+ATOM      5  O           0       3.240   1.240   0.780  0.00  0.00           O+0
+ATOM      6  N           0       2.140   0.000  -1.180  0.00  0.00           N+0
+ATOM      7  H           0      -0.499  -0.369  -0.872  0.00  0.00           H+0
+ATOM      8  H           0       0.315  -0.824   0.606  0.00  0.00           H+0
+ATOM      9  H           0      -0.670   0.618   0.560  0.00  0.00           H+0
+ATOM     10  H           0       0.861   1.617  -1.038  0.00  0.00           H+0
+ATOM     11  H           0       3.766   1.604   1.496  0.00  0.00           H+0
+ATOM     12  H           0       2.886   0.569  -1.526  0.00  0.00           H+0
+ATOM     13  H           0       1.656  -0.419  -1.949  0.00  0.00           H+0
+CONECT    1    2    7    8    9    0    0                               NCI   19
+CONECT    2    1    3    6   10    0    0                               NCI   20
+CONECT    3    2    4    5    0    0    0                               NCI   21
+CONECT    4    3    0    0    0    0    0                               NCI   22
+CONECT    5    3   11    0    0    0    0                               NCI   23
+CONECT    6    2   12   13    0    0    0                               NCI   24
+CONECT    7    1    0    0    0    0    0                               NCI   25
+CONECT    8    1    0    0    0    0    0                               NCI   26
+CONECT    9    1    0    0    0    0    0                               NCI   27
+CONECT   10    2    0    0    0    0    0                               NCI   28
+CONECT   11    5    0    0    0    0    0                               NCI   29
+CONECT   12    6    0    0    0    0    0                               NCI   30
+CONECT   13    6    0    0    0    0    0                               NCI   31
+END                                                                     NCI   32

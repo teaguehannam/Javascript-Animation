@@ -1,0 +1,46 @@
+HEADER    NCI NSC 9241                                                  NCI    1
+TITLE                                                                   NCI    2
+COMPND    NSC9241 methionine                                            NCI    3
+AUTHOR    National Cancer Institute                                     NCI    4
+REVDAT   1  28-Aug-20     0                                             NCI    5
+ATOM      1  N           0       0.000   0.000   0.000  0.00  0.00           N+0
+ATOM      2  C           0      -0.140  -0.980  -1.060  0.00  0.00           C+0
+ATOM      3  C           0       1.080  -1.840  -1.140  0.00  0.00           C+0
+ATOM      4  O           0       1.120  -2.800  -1.860  0.00  0.00           O+0
+ATOM      5  O           0       2.100  -1.440  -0.380  0.00  0.00           O+0
+ATOM      6  C           0      -0.460  -0.280  -2.380  0.00  0.00           C+0
+ATOM      7  C           0      -1.440  -1.060  -3.260  0.00  0.00           C+0
+ATOM      8  S           0      -0.680  -2.600  -3.860  0.00  0.00           S+0
+ATOM      9  C           0      -1.720  -3.780  -2.960  0.00  0.00           C+0
+ATOM     10  H           0       0.209  -0.466   0.860  0.00  0.00           H+0
+ATOM     11  H           0      -0.854   0.511   0.097  0.00  0.00           H+0
+ATOM     12  H           0      -0.960  -1.632  -0.842  0.00  0.00           H+0
+ATOM     13  H           0       2.926  -1.929  -0.389  0.00  0.00           H+0
+ATOM     14  H           0       0.457  -0.198  -2.925  0.00  0.00           H+0
+ATOM     15  H           0      -0.887   0.676  -2.162  0.00  0.00           H+0
+ATOM     16  H           0      -1.702  -0.455  -4.103  0.00  0.00           H+0
+ATOM     17  H           0      -2.312  -1.298  -2.688  0.00  0.00           H+0
+ATOM     18  H           0      -1.620  -3.614  -1.908  0.00  0.00           H+0
+ATOM     19  H           0      -2.742  -3.646  -3.247  0.00  0.00           H+0
+ATOM     20  H           0      -1.412  -4.778  -3.194  0.00  0.00           H+0
+CONECT    1    2   10   11    0    0    0                               NCI   26
+CONECT    2    1    3    6   12    0    0                               NCI   27
+CONECT    3    2    4    5    0    0    0                               NCI   28
+CONECT    4    3    0    0    0    0    0                               NCI   29
+CONECT    5    3   13    0    0    0    0                               NCI   30
+CONECT    6    2    7   14   15    0    0                               NCI   31
+CONECT    7    6    8   16   17    0    0                               NCI   32
+CONECT    8    7    9    0    0    0    0                               NCI   33
+CONECT    9    8   18   19   20    0    0                               NCI   34
+CONECT   10    1    0    0    0    0    0                               NCI   35
+CONECT   11    1    0    0    0    0    0                               NCI   36
+CONECT   12    2    0    0    0    0    0                               NCI   37
+CONECT   13    5    0    0    0    0    0                               NCI   38
+CONECT   14    6    0    0    0    0    0                               NCI   39
+CONECT   15    6    0    0    0    0    0                               NCI   40
+CONECT   16    7    0    0    0    0    0                               NCI   41
+CONECT   17    7    0    0    0    0    0                               NCI   42
+CONECT   18    9    0    0    0    0    0                               NCI   43
+CONECT   19    9    0    0    0    0    0                               NCI   44
+CONECT   20    9    0    0    0    0    0                               NCI   45
+END                                                                     NCI   46

@@ -1,0 +1,40 @@
+HEADER    NCI NSC 7891                                                  NCI    1
+TITLE                                                                   NCI    2
+COMPND    NSC7891 asparagine                                            NCI    3
+AUTHOR    National Cancer Institute                                     NCI    4
+REVDAT   1  28-Aug-20     0                                             NCI    5
+ATOM      1  N           0       0.000   0.000   0.000  0.00  0.00           N+0
+ATOM      2  C           0       0.680  -1.080   0.680  0.00  0.00           C+0
+ATOM      3  C           0       1.380  -0.560   1.940  0.00  0.00           C+0
+ATOM      4  C           0       2.660  -1.320   2.240  0.00  0.00           C+0
+ATOM      5  N           0       3.860  -0.680   2.080  0.00  0.00           N+0
+ATOM      6  O           0       2.620  -2.460   2.600  0.00  0.00           O+0
+ATOM      7  C           0      -0.300  -2.180   1.000  0.00  0.00           C+0
+ATOM      8  O           0      -0.780  -2.860   0.120  0.00  0.00           O+0
+ATOM      9  O           0      -0.580  -2.340   2.280  0.00  0.00           O+0
+ATOM     10  H           0       0.655   0.726  -0.210  0.00  0.00           H+0
+ATOM     11  H           0      -0.402  -0.342  -0.849  0.00  0.00           H+0
+ATOM     12  H           0       1.434  -1.485   0.038  0.00  0.00           H+0
+ATOM     13  H           0       0.715  -0.698   2.766  0.00  0.00           H+0
+ATOM     14  H           0       1.618   0.474   1.800  0.00  0.00           H+0
+ATOM     15  H           0       4.714  -1.166   2.265  0.00  0.00           H+0
+ATOM     16  H           0       3.882   0.273   1.779  0.00  0.00           H+0
+ATOM     17  H           0      -1.194  -3.025   2.555  0.00  0.00           H+0
+CONECT    1    2   10   11    0    0    0                               NCI   23
+CONECT    2    1    3    7   12    0    0                               NCI   24
+CONECT    3    2    4   13   14    0    0                               NCI   25
+CONECT    4    3    5    6    0    0    0                               NCI   26
+CONECT    5    4   15   16    0    0    0                               NCI   27
+CONECT    6    4    0    0    0    0    0                               NCI   28
+CONECT    7    2    8    9    0    0    0                               NCI   29
+CONECT    8    7    0    0    0    0    0                               NCI   30
+CONECT    9    7   17    0    0    0    0                               NCI   31
+CONECT   10    1    0    0    0    0    0                               NCI   32
+CONECT   11    1    0    0    0    0    0                               NCI   33
+CONECT   12    2    0    0    0    0    0                               NCI   34
+CONECT   13    3    0    0    0    0    0                               NCI   35
+CONECT   14    3    0    0    0    0    0                               NCI   36
+CONECT   15    5    0    0    0    0    0                               NCI   37
+CONECT   16    5    0    0    0    0    0                               NCI   38
+CONECT   17    9    0    0    0    0    0                               NCI   39
+END                                                                     NCI   40

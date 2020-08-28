@@ -1,0 +1,40 @@
+HEADER    NCI NSC 16589                                                 NCI    1
+TITLE                                                                   NCI    2
+COMPND    NSC16589 threonine                                            NCI    3
+AUTHOR    National Cancer Institute                                     NCI    4
+REVDAT   1  28-Aug-20     0                                             NCI    5
+ATOM      1  N           0       0.000   0.000   0.000  0.00  0.00           N+0
+ATOM      2  C           0       0.860   0.340  -1.100  0.00  0.00           C+0
+ATOM      3  C           0       0.260  -0.100  -2.420  0.00  0.00           C+0
+ATOM      4  C           0      -0.760  -1.240  -2.260  0.00  0.00           C+0
+ATOM      5  O           0       1.280  -0.540  -3.280  0.00  0.00           O+0
+ATOM      6  C           0       1.200   1.800  -1.080  0.00  0.00           C+0
+ATOM      7  O           0       1.800   2.300  -0.160  0.00  0.00           O+0
+ATOM      8  O           0       0.760   2.500  -2.140  0.00  0.00           O+0
+ATOM      9  H           0      -0.846   0.529  -0.063  0.00  0.00           H+0
+ATOM     10  H           0       0.461   0.211   0.862  0.00  0.00           H+0
+ATOM     11  H           0       1.780  -0.195  -0.989  0.00  0.00           H+0
+ATOM     12  H           0      -0.250   0.749  -2.824  0.00  0.00           H+0
+ATOM     13  H           0      -1.168  -1.490  -3.217  0.00  0.00           H+0
+ATOM     14  H           0      -0.274  -2.098  -1.845  0.00  0.00           H+0
+ATOM     15  H           0      -1.547  -0.925  -1.607  0.00  0.00           H+0
+ATOM     16  H           0       0.903  -0.767  -4.133  0.00  0.00           H+0
+ATOM     17  H           0       0.919   3.445  -2.190  0.00  0.00           H+0
+CONECT    1    2    9   10    0    0    0                               NCI   23
+CONECT    2    1    3    6   11    0    0                               NCI   24
+CONECT    3    2    4    5   12    0    0                               NCI   25
+CONECT    4    3   13   14   15    0    0                               NCI   26
+CONECT    5    3   16    0    0    0    0                               NCI   27
+CONECT    6    2    7    8    0    0    0                               NCI   28
+CONECT    7    6    0    0    0    0    0                               NCI   29
+CONECT    8    6   17    0    0    0    0                               NCI   30
+CONECT    9    1    0    0    0    0    0                               NCI   31
+CONECT   10    1    0    0    0    0    0                               NCI   32
+CONECT   11    2    0    0    0    0    0                               NCI   33
+CONECT   12    3    0    0    0    0    0                               NCI   34
+CONECT   13    4    0    0    0    0    0                               NCI   35
+CONECT   14    4    0    0    0    0    0                               NCI   36
+CONECT   15    4    0    0    0    0    0                               NCI   37
+CONECT   16    5    0    0    0    0    0                               NCI   38
+CONECT   17    8    0    0    0    0    0                               NCI   39
+END                                                                     NCI   40
