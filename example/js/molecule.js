@@ -4,152 +4,82 @@ import { TrackballControls } from '../../js/resources/TrackballControls.js';
 import { PDBLoader } from '../../js/resources/PDBLoader.js';
 import { CSS2DRenderer, CSS2DObject } from '../../js/resources/CSS2DRenderer.js';
 
+import { MOLECULES } from './moleculeData.js'
+
+
 var camera, scene, renderer, labelRenderer;
 var controls;
 
 var root;
-
-var ESSENTIAL = {
-	0: { "Histidine": "./aminos/essential/histidine.pdb" },
-	1: { "Isoleucine": "./aminos/essential/isoleucine.pdb" },
-	2: { "Leucine": "./aminos/essential/leucine.pdb" },
-	3: { "Lysine": "./aminos/essential/lysine.pdb" },
-	4: { "Methionine": "./aminos/essential/methionine.pdb" },
-	5: { "Phenylalanine": "./aminos/essential/phenylalanine.pdb" },
-	6: { "Threonine": "./aminos/essential/threonine.pdb" },
-	7: { "Tryptophan": "./aminos/essential/tryptophan.pdb" },
-	8: { "Valine": "./aminos/essential/valine.pdb" }
-};
-
-var NONESSENTIAL = {
-	0: { "Alanine": "./aminos/non-essential/alanine.pdb" },
-	1: { "Arginine": "./aminos/non-essential/arginine.pdb" },
-	2: { "Asparagine": "./aminos/non-essential/asparagine.pdb" },
-	3: { "Aspartic Acid": "./aminos/non-essential/aspartic_acid.pdb" },
-	4: { "Glutamic Acid": "./aminos/non-essential/glutamic_acid.pdb" },
-	5: { "Taurine": "./aminos/non-essential/taurine.pdb" },
-	6: { "Tyrosine": "./aminos/non-essential/tyrosine.pdb" }
-};
-
-var CONDITIONAL = {
-	0: { "Arginine*": "./aminos/non-essential/arginine.pdb" },
-	1: { "Cysteine": "./aminos/conditional/cysteine.pdb" },
-	2: { "Glutamine": "./aminos/conditional/glutamine.pdb" },
-	3: { "Glycine": "./aminos/conditional/glycine.pdb" },
-	4: { "Ornithine": "./aminos/conditional/ornithine.pdb" },
-	5: { "Proline": "./aminos/conditional/proline.pdb" },
-	6: { "Serine": "./aminos/conditional/serine.pdb" },
-	7: { "Tyrosine*": "./aminos/non-essential/tyrosine.pdb" }
-};
-
-var VITAMINS = {
-	0: { "Biotin": "./vitamins/biotin.pdb" },
-	1: { "Choline": "./vitamins/choline.pdb" },
-	2: { "Elatin": "./vitamins/elatin.pdb" },
-	3: { "Folic Acid": "./vitamins/folic acid.pdb" },
-	4: { "Inositol": "./vitamins/inositol.pdb" },
-	5: { "Vitamin A": "./vitamins/vitamin a.pdb" },
-	6: { "Vitamin B1": "./vitamins/vitamin b1.pdb" },
-	7: { "Vitamin B2": "./vitamins/vitamin b2.pdb" },
-	8: { "Vitamin B3 (Niacinamide)": "./vitamins/vitamin b3 niacinamide.pdb" },
-	9: { "Vitamin B3 (Nicotinic Acid)": "./vitamins/vitamin b3 nicotinic acid.pdb" },
-	10: { "Vitamin B5": "./vitamins/vitamin b5.pdb" },
-	11: { "Vitamin B6": "./vitamins/vitamin b6.pdb" },
-	// "Vitamin B12": "./vitamins/vitamin b12.pdb",
-	12: { "Vitamin C": "./vitamins/vitamin c.pdb" },
-	13: { "Vitamin D": "./vitamins/vitamin d.pdb" },
-	14: { "Vitamin E": "./vitamins/vitamin e.pdb" },
-	15: { "Vitamin K": "./vitamins/vitamin k.pdb" }
-};
-
-var MOLECULES = [ESSENTIAL, NONESSENTIAL, CONDITIONAL, VITAMINS];
 
 var loader = new PDBLoader();
 var offset = new THREE.Vector3();
 
 var menu = document.getElementById( 'menu' );
 
+// Setup & Run
 init();
 animate();
 
+
 function init() {
 
+	// Init Scene
 	scene = new THREE.Scene();
 	scene.background = new THREE.Color( 0x050505 );
-
 	camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 5000 );
 	camera.position.z = 1000;
 	scene.add( camera );
 
+	// Lighting
 	var light = new THREE.DirectionalLight( 0xffffff, 0.4 );
 	light.position.set( 1, 1, 1 );
 	scene.add( light );
-
 	var light = new THREE.DirectionalLight( 0xffffff, 0.8 );
 	light.position.set( - 1, - 1, 1 );
 	scene.add( light );
-
 	var light = new THREE.DirectionalLight( 0xffffff, 0.6 );
 	light.position.set(  1, - 1, - 1 );
 	scene.add( light );
-
 	var light = new THREE.DirectionalLight( 0xffffff, 0.6 );
 	light.position.set( - 1, 1, - 1 );
 	scene.add( light );
 
-
 	root = new THREE.Group();
 	scene.add( root );
 
-	//
-
+	// Init Renderer
 	renderer = new THREE.WebGLRenderer( { antialias: true } );
 	renderer.setPixelRatio( window.devicePixelRatio );
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	document.getElementById( 'container' ).appendChild( renderer.domElement );
 
-	labelRenderer = new CSS2DRenderer();
-	labelRenderer.setSize( window.innerWidth, window.innerHeight );
-	labelRenderer.domElement.style.position = 'absolute';
-	labelRenderer.domElement.style.top = '0px';
-	labelRenderer.domElement.style.pointerEvents = 'none';
-	document.getElementById( 'container' ).appendChild( labelRenderer.domElement );
-
-	//
-
+	// Move on mouse/touch
 	controls = new TrackballControls( camera, renderer.domElement );
 	controls.minDistance = 500;
 	controls.maxDistance = 2000;
 
-	//
-
+	// Init on load
 	loadMolecule( '../models/pdb/aminos/essential/leucine.pdb' );
 	createMenu();
-
-	//
-
 	window.addEventListener( 'resize', onWindowResize, false );
 
 }
 
-//
 
 function generateButtonCallback( url ) {
-
 	return function () {
-
 		loadMolecule( url );
-
 	};
-
 }
+
 
 function createMenu() {
 
 	for( var i = 0; i < Object.keys(MOLECULES).length; i++ ) {
 
 		var tempRow = document.createElement('div');
-		tempRow.className = "menuRow";
+		tempRow.className = "menuRow"; 
 
 		for ( var e = 0; e < Object.keys(MOLECULES[i]).length; e++ ) {
 
@@ -162,12 +92,13 @@ function createMenu() {
 			button.addEventListener( 'click', generateButtonCallback( url ), false );
 
 		}
+
 		menu.appendChild( tempRow );
+
 	}
-	
+
 }
 
-//
 
 function loadMolecule( url ) {
 
@@ -219,15 +150,6 @@ function loadMolecule( url ) {
 
 			var atom = json.atoms[ i ];
 
-			var text = document.createElement( 'div' );
-			text.className = 'label';
-			text.style.color = 'rgb(' + atom[ 3 ][ 0 ] + ',' + atom[ 3 ][ 1 ] + ',' + atom[ 3 ][ 2 ] + ')';
-			text.textContent = atom[ 4 ];
-
-			//var label = new CSS2DObject( text );
-			//label.position.copy( object.position );
-			//root.add( label );
-
 		}
 
 		positions = geometryBonds.getAttribute( 'position' );
@@ -263,7 +185,6 @@ function loadMolecule( url ) {
 
 }
 
-//
 
 function onWindowResize() {
 
@@ -276,6 +197,7 @@ function onWindowResize() {
 	render();
 
 }
+
 
 function animate() {
 
@@ -291,9 +213,11 @@ function animate() {
 
 }
 
+
 function render() {
 
 	renderer.render( scene, camera );
-	labelRenderer.render( scene, camera );
+
 
 }
+
