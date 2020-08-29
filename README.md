@@ -1,8 +1,8 @@
 # Three.js Animations
-### Rotating Box
+### Project: Rotating Box
 #### The "Hello World" of ThreeJS
 ------
-### 3D Molecule Viewer
+### Project: 3D Molecule Viewer
 #### Contains all Amino acids, and Vitamins
 ------
 ### Issues
