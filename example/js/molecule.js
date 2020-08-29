@@ -9,53 +9,60 @@ var controls;
 
 var root;
 
-var MOLECULES = {
-	// Essential
-	"Histidine": "./aminos/essential/histidine.pdb",
-	"Isoleucine": "./aminos/essential/isoleucine.pdb",
-	"Leucine": "./aminos/essential/leucine.pdb",
-	"Lysine": "./aminos/essential/lysine.pdb",
-	"Methionine": "./aminos/essential/methionine.pdb",
-	"Phenylalanine": "./aminos/essential/phenylalanine.pdb",
-	"Threonine": "./aminos/essential/threonine.pdb",
-	"Tryptophan": "./aminos/essential/tryptophan.pdb",
-	"Valine": "./aminos/essential/valine.pdb",
-	// Non-essential
-	"Alanine": "./aminos/non-essential/alanine.pdb",
-	"Arginine": "./aminos/non-essential/arginine.pdb",
-	"Asparagine": "./aminos/non-essential/asparagine.pdb",
-	"Aspartic Acid": "./aminos/non-essential/aspartic_acid.pdb",
-	"Glutamic Acid": "./aminos/non-essential/glutamic_acid.pdb",
-	"Taurine": "./aminos/non-essential/taurine.pdb",
-	"Tyrosine": "./aminos/non-essential/tyrosine.pdb",
-	// Conditional
-	"Arginine*": "./aminos/non-essential/arginine.pdb",
-	"Cysteine": "./aminos/conditional/cysteine.pdb",
-	"Glutamine": "./aminos/conditional/glutamine.pdb",
-	"Glycine": "./aminos/conditional/glycine.pdb",
-	"Ornithine": "./aminos/conditional/ornithine.pdb",
-	"Proline": "./aminos/conditional/proline.pdb",
-	"Serine": "./aminos/conditional/serine.pdb",
-	"Tyrosine*": "./aminos/non-essential/tyrosine.pdb",
-	// Vitamins
-	"Biotin": "./vitamins/biotin.pdb",
-	"Choline": "./vitamins/choline.pdb",
-	"Elatin": "./vitamins/elatin.pdb",
-	"Folic Acid": "./vitamins/folic acid.pdb",
-	"Inositol": "./vitamins/inositol.pdb",
-	"Vitamin A": "./vitamins/vitamin a.pdb",
-	"Vitamin B1": "./vitamins/vitamin b1.pdb",
-	"Vitamin B2": "./vitamins/vitamin b2.pdb",
-	"Vitamin B3 (Niacinamide)": "./vitamins/vitamin b3 niacinamide.pdb",
-	"Vitamin B3 (Nicotinic Acid)": "./vitamins/vitamin b3 nicotinic acid.pdb",
-	"Vitamin B5": "./vitamins/vitamin b5.pdb",
-	"Vitamin B6": "./vitamins/vitamin b6.pdb",
-	// "Vitamin B12": "./vitamins/vitamin b12.pdb",
-	"Vitamin C": "./vitamins/vitamin c.pdb",
-	"Vitamin D": "./vitamins/vitamin d.pdb",
-	"Vitamin E": "./vitamins/vitamin e.pdb",
-	"Vitamin K": "./vitamins/vitamin k.pdb",
+var ESSENTIAL = {
+	0: { "Histidine": "./aminos/essential/histidine.pdb" },
+	1: { "Isoleucine": "./aminos/essential/isoleucine.pdb" },
+	2: { "Leucine": "./aminos/essential/leucine.pdb" },
+	3: { "Lysine": "./aminos/essential/lysine.pdb" },
+	4: { "Methionine": "./aminos/essential/methionine.pdb" },
+	5: { "Phenylalanine": "./aminos/essential/phenylalanine.pdb" },
+	6: { "Threonine": "./aminos/essential/threonine.pdb" },
+	7: { "Tryptophan": "./aminos/essential/tryptophan.pdb" },
+	8: { "Valine": "./aminos/essential/valine.pdb" }
 };
+
+var NONESSENTIAL = {
+	0: { "Alanine": "./aminos/non-essential/alanine.pdb" },
+	1: { "Arginine": "./aminos/non-essential/arginine.pdb" },
+	2: { "Asparagine": "./aminos/non-essential/asparagine.pdb" },
+	3: { "Aspartic Acid": "./aminos/non-essential/aspartic_acid.pdb" },
+	4: { "Glutamic Acid": "./aminos/non-essential/glutamic_acid.pdb" },
+	5: { "Taurine": "./aminos/non-essential/taurine.pdb" },
+	6: { "Tyrosine": "./aminos/non-essential/tyrosine.pdb" }
+};
+
+var CONDITIONAL = {
+	0: { "Arginine*": "./aminos/non-essential/arginine.pdb" },
+	1: { "Cysteine": "./aminos/conditional/cysteine.pdb" },
+	2: { "Glutamine": "./aminos/conditional/glutamine.pdb" },
+	3: { "Glycine": "./aminos/conditional/glycine.pdb" },
+	4: { "Ornithine": "./aminos/conditional/ornithine.pdb" },
+	5: { "Proline": "./aminos/conditional/proline.pdb" },
+	6: { "Serine": "./aminos/conditional/serine.pdb" },
+	7: { "Tyrosine*": "./aminos/non-essential/tyrosine.pdb" }
+};
+
+var VITAMINS = {
+	0: { "Biotin": "./vitamins/biotin.pdb" },
+	1: { "Choline": "./vitamins/choline.pdb" },
+	2: { "Elatin": "./vitamins/elatin.pdb" },
+	3: { "Folic Acid": "./vitamins/folic acid.pdb" },
+	4: { "Inositol": "./vitamins/inositol.pdb" },
+	5: { "Vitamin A": "./vitamins/vitamin a.pdb" },
+	6: { "Vitamin B1": "./vitamins/vitamin b1.pdb" },
+	7: { "Vitamin B2": "./vitamins/vitamin b2.pdb" },
+	8: { "Vitamin B3 (Niacinamide)": "./vitamins/vitamin b3 niacinamide.pdb" },
+	9: { "Vitamin B3 (Nicotinic Acid)": "./vitamins/vitamin b3 nicotinic acid.pdb" },
+	10: { "Vitamin B5": "./vitamins/vitamin b5.pdb" },
+	11: { "Vitamin B6": "./vitamins/vitamin b6.pdb" },
+	// "Vitamin B12": "./vitamins/vitamin b12.pdb",
+	12: { "Vitamin C": "./vitamins/vitamin c.pdb" },
+	13: { "Vitamin D": "./vitamins/vitamin d.pdb" },
+	14: { "Vitamin E": "./vitamins/vitamin e.pdb" },
+	15: { "Vitamin K": "./vitamins/vitamin k.pdb" }
+};
+
+var MOLECULES = [ESSENTIAL, NONESSENTIAL, CONDITIONAL, VITAMINS];
 
 var loader = new PDBLoader();
 var offset = new THREE.Vector3();
@@ -89,7 +96,6 @@ function init() {
 	var light = new THREE.DirectionalLight( 0xffffff, 0.6 );
 	light.position.set( - 1, 1, - 1 );
 	scene.add( light );
-
 
 
 	root = new THREE.Group();
@@ -140,18 +146,25 @@ function generateButtonCallback( url ) {
 
 function createMenu() {
 
-	for ( var m in MOLECULES ) {
+	for( var i = 0; i < Object.keys(MOLECULES).length; i++ ) {
 
-		var button = document.createElement( 'button' );
-		button.innerHTML = m;
-		menu.appendChild( button );
+		var tempRow = document.createElement('div');
+		tempRow.className = "menuRow";
 
-		var url = '../models/pdb/' + MOLECULES[ m ];
+		for ( var e = 0; e < Object.keys(MOLECULES[i]).length; e++ ) {
 
-		button.addEventListener( 'click', generateButtonCallback( url ), false );
+			var button = document.createElement( 'button' );
+			button.innerHTML = Object.keys(MOLECULES[i][e]);
+			tempRow.appendChild( button );
 
+			var url = '../models/pdb/' + Object.values(MOLECULES[i][e]);
+
+			button.addEventListener( 'click', generateButtonCallback( url ), false );
+
+		}
+		menu.appendChild( tempRow );
 	}
-
+	
 }
 
 //

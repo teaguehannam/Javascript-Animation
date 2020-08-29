@@ -7,6 +7,11 @@
 	margin: 0;
 }
 
+.menuRow {
+	width: 100%;
+	font-size: 16px;
+}
+
 button {
 	color: rgb(255,255,255);
 	background: transparent;
