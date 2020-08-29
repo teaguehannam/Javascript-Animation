@@ -1,8 +1,8 @@
-import * as THREE from '../../js/resources/three.module.js';
+import * as THREE from '../libraries/three.module.js';
 
-import { TrackballControls } from '../../js/resources/TrackballControls.js';
-import { PDBLoader } from '../../js/resources/PDBLoader.js';
-import { CSS2DRenderer, CSS2DObject } from '../../js/resources/CSS2DRenderer.js';
+import { TrackballControls } from '../libraries/TrackballControls.js';
+import { PDBLoader } from '../libraries/PDBLoader.js';
+import { CSS2DRenderer, CSS2DObject } from '../libraries/CSS2DRenderer.js';
 
 import { MOLECULES } from './moleculeData.js'
 
@@ -60,7 +60,7 @@ function init() {
 	controls.maxDistance = 2000;
 
 	// Init on load
-	loadMolecule( '../models/pdb/aminos/essential/leucine.pdb' );
+	loadMolecule( '../pdb/aminos/essential/leucine.pdb' );
 	createMenu();
 	window.addEventListener( 'resize', onWindowResize, false );
 
@@ -87,7 +87,7 @@ function createMenu() {
 			button.innerHTML = Object.keys(MOLECULES[i][e]);
 			tempRow.appendChild( button );
 
-			var url = '../models/pdb/' + Object.values(MOLECULES[i][e]);
+			var url = '../pdb/' + Object.values(MOLECULES[i][e]);
 
 			button.addEventListener( 'click', generateButtonCallback( url ), false );
 
