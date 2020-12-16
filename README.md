@@ -6,4 +6,4 @@
 #### Contains all Essential, Conditional, Non-Essential Amino acids, and Vitamins
 ------
 ### Issues
-#### Vitamin B12 & Selenocysteine models unsupported by MMFF94s size limit (╯°□°)╯︵ ┻━┻
+#### Vitamin B12 & Selenocysteine models unsupported by MMFF94s (size limit for .pdb format)
